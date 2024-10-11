@@ -1,4 +1,4 @@
-import Button from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -16,7 +16,7 @@ const FormSantier = (props) => {
       codSantier: codSantier,
       santier: santier,
       localitate: localitate,
-      judet: judet
+      judet: judet,
     };
     props.adaugSantier(santierNou);
     setCodSantier("");
@@ -36,7 +36,9 @@ const FormSantier = (props) => {
           type="text"
           placeholder="Cod Santier"
           value={codSantier}
-          onChange={(e) => setCodSantier(e.target.value)}
+          onChange={(e) => {
+            return setCodSantier(e.target.value);
+          }}
         />
         <Form.Control.Feedback type="invalid">
           Please choose a username.
